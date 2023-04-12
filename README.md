@@ -5,8 +5,11 @@
 ### Task 1 - initial setup
 
 1. Install React Router
-2. Create a browser router with 2 routes, one for the Home page at `/` and one for the Lab page at `/lab` (use the components in `src/components`)
-3. in `App.js`, create navigation links that allow switching between the two pages
+2. Create a browser router with a root route and 2 children routes in `index.js`, and render the `RouterProvider` instead of the `App` component.
+3. The root route will be rendering the `App.js` element.
+4. One of the children routes will be an `index` route, rendering the `Home.js` element.
+5. The other will be at the `/lab` path, rendering the `Lab.js` element.
+6. in `App.js`, create navigation links that allow switching between the two pages
 
 ### Task 2 - add a loader to the Lab page
 
