@@ -1,70 +1,30 @@
-# Getting Started with Create React App
+# LAB 07 - React Router
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## React Router
 
-## Available Scripts
+### Task 1 - initial setup
 
-In the project directory, you can run:
+1. Install React Router
+2. Create a browser router with 2 routes, one for the Home page at `/` and one for the Lab page at `/lab` (use the components in `src/components`)
+3. in `App.js`, create navigation links that allow switching between the two pages
 
-### `npm start`
+### Task 2 - add a loader to the Lab page
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+1. Write a loader in the Lab.js file, that loads todo data using the mock library in `src/data/index.js`
+2. Use the loader in the route definition for the Lab page
+3. Render the todo list data in the Lab component, using `<ul>` and `<li>` elements
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Task 3 - add a form to create a new todo
 
-### `npm test`
+1. Write an action in the Lab.js file, that adds a new todo to the list (using the mock library)
+2. Use the action in the route definition for the Lab page
+3. Render a form in the Lab component, that triggers the action when submitted
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Task 4 - child routes and useNavigation
 
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Add a new components called `Bouncer.js` and `Trigger.js` to the `src/components` folder
+2. Add children routes to the Lab page, that renders the `Trigger` and an index page, and `Bouncer` under the `/bouncer/:name` path
+3. Use Outlet in the Lab component to render the children
+4. In the Trigger component get a random name from the mock library (`randomName()`) and render a link that navigates to the Bouncer page `bouncer/${name}`
+5. In the Bouncer component, render the name from the route params
+6. In the Bouncer component, use the `useNavigation` and `useEffect` hooks to navigate back to the Lab page after 2 seconds
